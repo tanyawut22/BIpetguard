@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+<link rel="icon" type="image/png" href="../assets/img/petguardlogo.png">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add vet</title>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <script src="https://kit.fontawesome.com/6f337e5656.js" crossorigin="anonymous"></script>
+    <!-- CSS Files -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../assets/css/demo.css" rel="stylesheet" />
+    <link href="../assets/css/Add.css" rel="stylesheet" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+img {
+    border-radius: 50%;
+  }
+h4 {
+    padding-top: 1%;
+  padding-right: 10%;
+  padding-left: 0%;
+  }
+.overpic{
+    width: 37px;
+    display: block;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+.centercate{
+    margin-top: 2%;
+    margin-left: 2%;
+}
+.quickpic{
+    width: 8%;
+    display: block;
+    margin-top: 0%;
+   
+}
+.hrstyle{
+    margin-bottom: 2%;
+    margin-top: 10%;
+}
+
+.spacen{
+    margin-bottom: 10%;
+}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip();
+	var actions = $("table td:last-child").html();
+	// Append table with add row form on add new button click
+    $(".add-new").click(function(){
+		$(this).attr("disabled", "disabled");
+		var index = $("table tbody tr:last-child").index();
+        var row = '<tr>' +
+            '<td><input type="text" class="form-control" name="vetid" id="vetid"></td>' +
+            '<td><button class="btn"><i class="fa fa-folder"></i></button></td>' +
+            '<td><input type="text" class="form-control" name="name" id="name"></td>' +
+            '<td><input type="text" class="form-control" name="lastname" id="lastname"></td>' +
+            '<td><input type="text" class="form-control" name="nameacc" id="nameacc"></td>' +
+            '<td><input type="text" class="form-control" name="education" id="education"></td>' +
+            '<td><input type="text" class="form-control" name="specialty" id="specialty"></td>' +
+            '<td><input type="text" class="form-control" name="email" id="email"></td>' +
+            '<td><input type="text" class="form-control" name="birthday" id="birthday"></td>' +
+			'<td>' + actions + '</td>' +
+        '</tr>';
+    	$("table").append(row);		
+		$("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+	// Add row on add button click
+	$(document).on("click", ".add", function(){
+		var empty = false;
+		var input = $(this).parents("tr").find('input[type="text"]');
+        input.each(function(){
+			if(!$(this).val()){
+				$(this).addClass("error");
+				empty = true;
+			} else{
+                $(this).removeClass("error");
+            }
+		});
+		$(this).parents("tr").find(".error").first().focus();
+		if(!empty){
+			input.each(function(){
+				$(this).parent("td").html($(this).val());
+			});			
+			$(this).parents("tr").find(".add, .edit").toggle();
+			$(".add-new").removeAttr("disabled");
+		}		
+    });
+	// Edit row on edit button click
+	$(document).on("click", ".edit", function(){		
+        $(this).parents("tr").find("td:not(:last-child)").each(function(){
+			$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+		});		
+		$(this).parents("tr").find(".add, .edit").toggle();
+		$(".add-new").attr("disabled", "disabled");
+    });
+	// Delete row on delete button click
+	$(document).on("click", ".delete", function(){
+        $(this).parents("tr").remove();
+		$(".add-new").removeAttr("disabled");
+    });
+});
+</script>
+</head>
+<body>
+        <div class="wrapper">
+                <div class="sidebar" data-image="../assets/img/colorslidebar.png" data-color="black">
+                    <!--
+                Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+        
+                Tip 2: you can also add an image using data-image tag
+            -->
+                    <div class="sidebar-wrapper">
+                        <div class="logo">
+                            <a href="javascript:;" class="simple-text">
+                              PetGuard
+                            </a>
+                        </div>
+                        <ul class="nav">
+                            <li>
+                                <a class="nav-link" href="dashboardPet.html">
+                                    <i class="fas fa-chart-line"></i>
+                                    <p>Dashboard</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="veterinarian.html">
+                                    <i class="fas fa-user-md"></i>
+                                    <p>veterinarian</p>
+                                </a>
+                            </li>
+                            <li>
+                                <li class="nav-item active">
+                                <a class="nav-link" href="Addvet.html">
+                                    <i class="fas fa-user-plus"></i>
+                                    <p>Add Vet</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="Members.html">
+                                    <i class="fas fa-user"></i>
+                                    <p>Members</p>
+                                </a>
+                            </li>
+        
+                            <li class="nav-item active active-pro">
+                                <a class="nav-link active" href="javascript:;">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <p>Logout</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-panel">
+                        <!-- Navbar -->
+                        <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+                            <div class="container-fluid">
+                                <!-- <a class="navbar-brand" href="#pablo">Template</a> -->
+                                <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-bar burger-lines"></span>
+                                    <span class="navbar-toggler-bar burger-lines"></span>
+                                    <span class="navbar-toggler-bar burger-lines"></span>
+                                </button>
+                                <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                                    <ul class="nav navbar-nav mr-auto">
+                                        <!-- <li class="nav-item">
+                                            <a href="#" class="nav-link" data-toggle="dropdown">
+                                                <i class="nc-icon nc-palette"></i>
+                                                <span class="d-lg-none">Dashboard</span>
+                                            </a>
+                                        </li> -->
+                                        <!-- <li class="dropdown nav-item">
+                                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                                <i class="nc-icon nc-planet"></i>
+                                                <span class="notification">5</span>
+                                                <span class="d-lg-none">Notification</span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Notification 1</a>
+                                                <a class="dropdown-item" href="#">Notification 2</a>
+                                                <a class="dropdown-item" href="#">Notification 3</a>
+                                                <a class="dropdown-item" href="#">Notification 4</a>
+                                                <a class="dropdown-item" href="#">Another notification</a>
+                                            </ul>
+                                        </li> -->
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="nc-icon nc-zoom-split"></i>
+                                                <span class="d-lg-block">&nbsp;Search</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#pablo">
+                                                    <i class="fas fa-bell"></i>
+                                                <span class="no-icon"></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="#pablo">
+                                                        <i class="fas fa-comments"></i>
+                                                    <span class="no-icon"></span>
+                                                </a>
+                                            </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="no-icon">Account</span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="#">Action</a>
+                                                <a class="dropdown-item" href="#">Another action</a>
+                                                <a class="dropdown-item" href="#">Something</a>
+                                                <a class="dropdown-item" href="#">Something else here</a>
+                                                <div class="divider"></div>
+                                                <a class="dropdown-item" href="#">Separated link</a>
+                                            </div>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                            <a class="nav-link" href="#pablo">
+                                                <span class="no-icon">Log out</span>
+                                            </a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+        <!-- End Navbar -->
+        <div class="container">
+                <div class="container-fluid">
+                        <div class="section">
+                            <div class="col-md-14">
+
+                                
+            <div class="table-title">
+                
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h4 style="float:left">Add Veterinarian</h4>
+                    </div>
+                    <div class="col-sm-2"><h4>
+                        <button type="button" class="btn btn-warning add-new"><i class="fa fa-plus"></i> Add New Vet</button>
+                   </h4> </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                            <th>Vet ID</th>
+                            <th>Picture</th>
+                            <th>Name</th>
+                            <th>Lastname</th>
+                            <th>Name Account</th>
+                            <th>Education</th>
+                            <th>Specialty</th>
+                            <th>Email</th>
+                            <th>Birthday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                            <td>00001</td>
+                            <td><img src="../assets/img/faces/face-3.jpg" style="width:50px;height:50px;"></td>
+                            <td>Thomas</td>
+                            <td>Hardy</td>
+                            <td>ThomasH01</td>
+                            <td>Mae Fah Luang University</td>
+                            <td>Exotic Pet</td>
+                            <td>thom@mail.com</td>
+                            <td>01/01/2531</td>
+                        <td>
+							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>00002</td>
+                            <td><img src="../assets/img/faces/face-6.jpg" style="width:50px;height:50px;"></td>
+                            <td>Dominique</td>
+                            <td>Perrier</td>
+                            <td>DominiP02</td>
+                            <td>Mae Fah Luang University</td>
+                            <td>Normal Pet</td>
+                            <td>domini@mail.com</td>
+                            <td>02/02/2531</td>
+                        <td>
+							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                          
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <nav>
+                    <p class="copyright text-center">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            <a href="http://www.google.com">PetGuard</a>, We care every lives.
+                        </p>
+                    </nav>
+                </div>
+            </footer>
+</div>
+        </div>
+    </div>     
+</body>
+</html>                            

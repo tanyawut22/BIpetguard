@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>FBB - NORTH | Maintenance Form Wizard</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        
+        <!-- BEGIN THEME GLOBAL STYLES -->
+        <link href="/assets/global/css/components-rounded.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/global/plugins/amcharts/amcharts/plugins/export/export.css" rel="stylesheet" type="text/css" />
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <link href="/assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/layouts/layout/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+        
+        <link rel="shortcut icon" href="/favicon.ico" />
+    </head>
+
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+        <div class="page-wrapper">
+            <div class="page-header navbar navbar-fixed-top">
+                <div class="page-header-inner ">
+                    <div class="page-logo">
+                        <a href="index.html">
+                            <img src="/assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" /> </a>
+                        <div class="menu-toggler sidebar-toggler">
+                            <span id="ttHide"></span>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span></span>
+                    </a>
+                    <div class="top-menu">
+                        <ul class="nav navbar-nav pull-right">
+                            <li class="dropdown dropdown-user">
+                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                    <img alt="" class="img-circle" src="/assets/layouts/layout/img/avatar3_small.jpg" />
+                                    <span class="username username-hide-on-mobile"> dpfbbn </span>
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-default">
+                                    <li>
+                                        <a href="page_user_profile_1.html">
+                                            <i class="icon-user"></i> My Profile </a>
+                                    </li>
+                                    <li class="divider"> </li>
+                                    <li>
+                                        <a href="page_user_lock_1.html">
+                                            <i class="icon-lock"></i> Lock Screen </a>
+                                    </li>
+                                    <li>
+                                        <a href="page_user_login_1.html">
+                                            <i class="icon-key"></i> Log Out </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-quick-sidebar-toggler">
+                                <a href="/logout" class="dropdown-toggle">
+                                    <i class="icon-logout"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+            <div class="page-container">
+                <div class="page-sidebar-wrapper">
+                    <div class="page-sidebar navbar-collapse collapse">
+                        <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200"
+                            style="padding-top: 20px">
+                            <li class="sidebar-toggler-wrapper hide">
+                                <div class="sidebar-toggler">
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li class="nav-item start">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="icon-home"></i>
+                                    <span class="title">Maintenance</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <!-- <li class="nav-item">
+                                        <a href="../matask" class="nav-link ">
+                                            <i class="fa fa-file-o" style="padding-right: 5px;"></i>
+                                            <span class="title">กรอกฟอร์มงาน MA</span>
+                                        </a>
+                                    </li> -->
+                                    <li class="nav-item">
+                                        <a href="../matask/3" class="nav-link ">
+                                            <i class="fa fa-th-list" style="padding-right: 5px;"></i>
+                                            <span class="title">ประเภทของงาน MA</span>
+                                        </a>
+                                    </li>
+                                    <!-- <li class="nav-item">
+                                        <a href="../matask/4" class="nav-link ">
+                                            <i class="fa fa-th-list" style="padding-right: 5px;"></i>
+                                            <span class="title">ตารางจัดการงาน MA (ย่อ)</span>
+                                        </a>
+                                    </li> -->
+                                    <li class="nav-item">
+                                        <a href="../matask/6" class="nav-link ">
+                                            <i class="fa fa-th-list" style="padding-right: 5px;"></i>
+                                            <span class="title">ตารางจัดการงาน MA</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="../matask/5" class="nav-link ">
+                                            <i class="fa fa-group" style="padding-right: 5px;"></i>
+                                            <span class="title">ทีมช่างงาน MA</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item active open">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="fa fa-bar-chart"></i>
+                                    <span class="title">Report</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item">
+                                        <a href="../report" class="nav-link ">
+                                            <i class="fa fa-pie-chart" style="padding-right: 5px;"></i>
+                                            <span class="title">Daily MA</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item active open">
+                                        <a href="./2" class="nav-link ">
+                                            <i class="fa fa-pie-chart" style="padding-right: 5px;"></i>
+                                            <span class="title">Port Terminate</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                    <a href="javascript:;" class="nav-link nav-toggle">
+                                        <i class="fa fa-user"></i><span class="title">Outsource Management</span><span class="arrow"></span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item">
+                                            <a href="../team" class="nav-link ">
+                                                <i class="fa fa-th-list" style="padding-right: 5px;"></i>
+                                                <span class="title">Dealer</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            <li class="nav-item">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="fa fa-cubes"></i>
+                                    <span class="title">UI Library</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item">
+                                        <a href="../uilib" class="nav-link ">
+                                            <i class="fa fa-th-list" style="padding-right: 5px;"></i>
+                                            <span class="title">Font Icons</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="../uilib/2" class="nav-link ">
+                                            <i class="fa fa-th-list" style="padding-right: 5px;"></i>
+                                            <span class="title">Color Library</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="page-content-wrapper">
+                    <div class="page-content">
+                        <div class="page-bar">
+                            <ul class="page-breadcrumb">
+                                <li>
+                                    <a href="../matask">report</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <span>Terminate port Charts</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <h1 class="page-title"></h1>
+                        <div class="row">
+                            <!-- CONTENT -->
+                            <div class="col-lg-12 col-md-12 col-xs-12">
+                                <div class="portlet light bordered">
+                                    <div class="portlet-title">
+                                        <div class="caption font-dark">
+                                            <span class="caption-subject bold uppercase">Port Terminate Chart</span>
+                                        </div>
+                                        <div class="actions">
+                                            <a class="btn btn-icon-only dark">
+                                                <i class="fa fa-refresh" title="refresh chart" onclick="kavascript:getData_terminate();"></i>
+                                            </a>
+                                            <a class="btn btn-icon-only dark">
+                                                <i class="fa fa-download" title="download data csv" onclick="kavascript:downloadData();"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div id="chartdiv" style="width: 100%; height: 400px;"></div>
+                                        <div class="margin-top-20 margin-bottom-20" style="text-align: center;">
+                                            <div class="btn-group btn-group-solid graphControls">
+                                                <button type="button" id="ttBtn1" onclick="loadData(-1, 1);" class="btn btn-default ttBtn">Last Month</button>
+                                                <button type="button" id="ttBtn2" onclick="loadData(0, 2);" class="btn dark btn-default ttBtn">This Month</button>
+                                                <button type="button" id="ttBtn3" onclick="loadData(1, 3);" class="btn btn-default ttBtn">Next Month</button>
+                                            </div>
+                                        </div>
+                                        <div id="chartnotter" style="width: 100%; height: 400px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-footer">
+                <div class="page-footer-inner"> 2018 &copy; Fixed Boardband - North </div>
+                <div class="scroll-to-top">
+                    <i class="icon-arrow-up"></i>
+                </div>
+            </div>
+        </div>
+        <!--[if lt IE 9]>
+        <script src="/assets/global/plugins/respond.min.js"></script>
+        <script src="/assets/global/plugins/excanvas.min.js"></script>
+        <script src="/assets/global/plugins/ie8.fix.min.js"></script>
+        <![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+        <script src="/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <script src="/assets/global/plugins/amcharts/amcharts/amcharts.js"></script>
+        <script src="/assets/global/plugins/amcharts/amcharts/serial.js"></script>
+        <script src="/assets/global/plugins/amcharts/amcharts/plugins/export/export.min.js"></script>
+
+        <script src="/assets/global/plugins/moment.min.js" type="text/javascript"></script>
+        <script src="/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+        <!-- BEGIN THEME GLOBAL SCRIPTS -->
+        <script src="/assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <script src="/assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+        <script src="/assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+        <script src="/js/report/report02.js" type="text/javascript"></script>
+     
+        <script type="text/javascript">
+            onInitialize();
+        </script>
+    </body>
+</html>

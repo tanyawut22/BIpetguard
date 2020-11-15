@@ -1,0 +1,16 @@
+{
+  "name": "basic-authen-v3",
+  "version": "3.0.0",
+  "description": "new designed hummus",
+  "main": "serverAuthenService.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AIS_SDK_Team",
+  "license": "AIS (ADVANCED INFO SERVICE PLC.)",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "restify-clients": "^2.2.0",
+    "ursa-purejs": "0.0.3"
+  }
+}
